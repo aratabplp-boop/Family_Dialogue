@@ -1,0 +1,7 @@
+# 秘密情報のファイルを隠す
+config.php
+db_init.php
+
+# OSが勝手に作るゴミファイル
+.DS_Store
+Thumbs.db
