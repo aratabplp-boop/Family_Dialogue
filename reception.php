@@ -21,7 +21,7 @@ if ($action === 'family_login') {
         try {
             // 処理：まずは同じ名前の家族がすでに登録されているか確認
             // 意味：二重登録を防ぐため、DBの名簿（groups）を一行ずつ探す
-            $stmt = $pdo->prepare("SELECT * FROM groups WHERE group_name = ?");
+            $stmt = $pdo->prepare("SELECT * FROM `groups` WHERE group_name = ?");
             $stmt->execute([$family_name]);
             $family = $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -38,7 +38,7 @@ if ($action === 'family_login') {
             } else {
                 // 処理：家族が見つからない場合、新しく登録します
                 // 意味：初めてのお客さんなので、新しく「家」を建てます
-                $stmt = $pdo->prepare("INSERT INTO groups (group_name, login_pass) VALUES (?, ?)");
+                $stmt = $pdo->prepare("INSERT INTO `groups` (group_name, login_pass) VALUES (?, ?)");
                 $stmt->execute([$family_name, $family_pass]);
                 
                 $response['success'] = true;
@@ -60,7 +60,7 @@ if ($action === 'fetch_members') {
     $family_id = $_POST['family_id'] ?? '';
 
     try {
-        $stmt = $pdo->prepare("SELECT id, name, role, birthday FROM users WHERE group_id = ?");
+        $stmt = $pdo->prepare("SELECT id, name, role, birthday FROM `users` WHERE group_id = ?");
         $stmt->execute([$family_id]);
         $members = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -80,7 +80,7 @@ if ($action === 'add_member') {
     $birthday = $_POST['birthday'] ?? '';
 
     try {
-        $stmt = $pdo->prepare("INSERT INTO users (group_id, name, role, birthday) VALUES (?, ?, ?, ?)");
+        $stmt = $pdo->prepare("INSERT INTO `users` (group_id, name, role, birthday) VALUES (?, ?, ?, ?)");
         $stmt->execute([$family_id, $name, $role, $birthday]);
 
         $response['success'] = true;

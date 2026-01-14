@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>$$クイズ☆ファミリオネア$$</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
@@ -55,8 +58,8 @@
             
             <div id="family-hints-area" style="margin-top: 20px; border-top: 1px dashed #ffa500; padding-top: 10px;">
                 <p style="font-size: 0.9em; color: #d35400;"><strong>★家族だけの特別問題（第4問・第7問）</strong></p>
-                <input type="text" id="hint_q4" placeholder="第4問のヒント（例：パパの好きな靴下は？）">
-                <input type="text" id="hint_q7" placeholder="第7問のヒント（例：昨日みんなで食べた夕飯は？）">
+                <input type="text" id="hint_q4" placeholder="第4問（例：パパの好きな食べ物は？　答:カレー）">
+                <input type="text" id="hint_q7" placeholder="第7問（例：あさこの得意なことは？　答:ダンス）">
                 <p style="font-size: 0.7em;">※空欄の場合はAIが自動で考えます</p>
             </div>
 

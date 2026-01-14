@@ -1,8 +1,9 @@
 /* きいてきいて！ 基本デザイン設定 */
 
 body {
-    font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
-    background: #fff9e6; /* 温かみのあるクリーム色 */
+font-family: 'Kiwi Maru', serif;
+    background-color: #fff9eb; /* 柔らかい背景色もおすすめです */
+    color: #5a4a42;           /* 文字色も少し茶色寄りにするとさらに優しくなります */
     text-align: center;
     margin: 0;
     padding: 0;
@@ -43,6 +44,7 @@ button {
     border: none;
     padding: 15px 30px;
     border-radius: 50px;
+    font-family: 'Kiwi Maru', serif;
     font-weight: bold;
     font-size: 1.1em;
     cursor: pointer;
